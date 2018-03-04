@@ -5,12 +5,15 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var heading = "<h1> This is my heading </h1>"
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/home',function(req,res){
-    res.send("<h1> This is heading </h1>");
+    res.send(heading);
 });
 
 app.get('/ui/style.css', function (req, res) {
