@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var n = "Ashwani Singh";
-var template = "<h1> This is heading give by ${n}";
+var template = `<h1> This is heading give by ${n}`;
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
