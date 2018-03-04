@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var heading = "<h1> This is my heading by Ashwani Singh </h1>";
+var name = "Ashwani Singh";
+var heading = `<h1> This is my heading by {$name}</h1>';
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
