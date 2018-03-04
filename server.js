@@ -5,15 +5,15 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var name = "Ashwani Singh";
-var heading = `<h1> This is my heading by {$name}</h1>';
+var n = "Ashwani Singh";
+var template = "<h1> This is heading give by ${n}";
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/home',function(req,res){
-    res.send(heading);
+    res.send(template);
 });
 
 app.get('/ui/style.css', function (req, res) {
